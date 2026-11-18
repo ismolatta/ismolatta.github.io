@@ -18,7 +18,7 @@ Düz HTML/CSS/JS, derleme yok. `main` dalına push'lanan her şey 1–2 dakika i
 - **Yeni Spotify listesi:** `playlists.js`'te ilgili gruba `['<playlist id>', 'Ad']` satırı ekle. ID, liste linkindeki `open.spotify.com/playlist/<id>` kısmı.
 - **Favori film/dizi ya da IMDb listesi:** `config.js` → `favorites` / `lists`. Poster ID'si, IMDb resim adresindeki `m.media-amazon.com/images/M/<id>._V1_…` kısmı.
 - **Career:** `index.html` → `#career` içindeki `<li class="step">` blokları. Logo `assets/career/`'a; etiket `stepTag edu` (Education) ya da `stepTag work` (Experience).
-- **Contact:** e-posta adresi `index.html` → `#contact` içinde iki yerde: `mailto:` linki ve Copy butonunun `data-mail` değeri.
+- **Contact:** e-posta adresi `index.html` → `#contact` içindeki `mailto:` linkinde (hem `href` hem görünen metin).
 - **WFJ istatistikleri** (7,000+, 500+, 24 hikâye): `index.html` içinde elle yazılı.
 
 ## Yerelde bakmak

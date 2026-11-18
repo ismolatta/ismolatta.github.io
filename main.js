@@ -21,7 +21,7 @@
   if (cfg.spotifyUser) spotify.href = 'https://open.spotify.com/user/' + encodeURIComponent(cfg.spotifyUser);
   else spotify.hidden = true;
 
-  // ── Playlists: one shared compact player + every list as a chip ──
+  // ── Playlists: one shared player + every list as a chip ──
   const player = $('player');
   const embed = (id) => 'https://open.spotify.com/embed/playlist/' + id + '?theme=0';
   let activeChip = null;
@@ -140,19 +140,6 @@
     lists.appendChild(a);
   });
   lists.previousElementSibling.hidden = lists.hidden = !lists.children.length;
-
-  // Contact: copy the address, with a short "Copied" confirmation
-  const copy = $('copyMail');
-  if (copy && navigator.clipboard) {
-    copy.addEventListener('click', () => {
-      navigator.clipboard.writeText(copy.dataset.mail).then(() => {
-        copy.textContent = 'Copied ✓';
-        setTimeout(() => { copy.textContent = 'Copy'; }, 1800);
-      });
-    });
-  } else if (copy) {
-    copy.hidden = true;
-  }
 
   // Every outside link opens in a new tab (in-page #anchors stay put)
   document.querySelectorAll('a[href^="http"]').forEach((a) => {
