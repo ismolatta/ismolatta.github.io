@@ -17,11 +17,11 @@ window.SITE_CONFIG = {
     { id: 'tt0133093', title: 'The Matrix', years: '1999', type: 'Film', poster: 'MV5BN2NmN2VhMTQtMDNiOS00NDlhLTliMjgtODE2ZTY0ODQyNDRhXkEyXkFqcGc@' },
     { id: 'tt0468569', title: 'The Dark Knight', years: '2008', type: 'Film', poster: 'MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@' },
     { id: 'tt0372784', title: 'Batman Begins', years: '2005', type: 'Film', poster: 'MV5BMzA2NDQzZDEtNDU5Ni00YTlkLTg2OWEtYmQwM2Y1YTBjMjFjXkEyXkFqcGc@' },
-    { id: 'tt0421384', title: 'Kurtlar Vadisi', years: '2003–2005', type: 'Series', poster: 'MV5BMGE1ZWIwNWItNzU3My00M2Q1LWE1YWMtZGEwNWVlM2E1MmI4XkEyXkFqcGc@' },
-    { id: 'tt2085059', title: 'Black Mirror', years: '2011–', type: 'Series', poster: 'MV5BODcxMWI2NDMtYTc3NC00OTZjLWFmNmUtM2NmY2I1ODkxYzczXkEyXkFqcGc@' },
-    { id: 'tt1119644', title: 'Fringe', years: '2008–2013', type: 'Series', poster: 'MV5BMWVlMmE1MmEtNjhjMC00MDdmLWIzZGMtNjc1YTZmNDc2MWExXkEyXkFqcGc@' },
-    { id: 'tt0182576', title: 'Family Guy', years: '1999–', type: 'Series', poster: 'MV5BNTZlMGQ1YjEtMzVlNC00ZmMxLTk0MzgtZjdkYTU1NmUxNTQ0XkEyXkFqcGc@' },
-    { id: 'tt6524350', title: 'Big Mouth', years: '2017–2025', type: 'Series', poster: 'MV5BMTU0YjUyNDctYmM0OC00OWU5LWJmNTMtODY5Njc4MzVlMWE2XkEyXkFqcGc@' },
+    { id: 'tt0421384', title: 'Kurtlar Vadisi', years: '2003–2005', type: 'TV', poster: 'MV5BMGE1ZWIwNWItNzU3My00M2Q1LWE1YWMtZGEwNWVlM2E1MmI4XkEyXkFqcGc@' },
+    { id: 'tt2085059', title: 'Black Mirror', years: '2011–', type: 'TV', poster: 'MV5BODcxMWI2NDMtYTc3NC00OTZjLWFmNmUtM2NmY2I1ODkxYzczXkEyXkFqcGc@' },
+    { id: 'tt1119644', title: 'Fringe', years: '2008–2013', type: 'TV', poster: 'MV5BMWVlMmE1MmEtNjhjMC00MDdmLWIzZGMtNjc1YTZmNDc2MWExXkEyXkFqcGc@' },
+    { id: 'tt0182576', title: 'Family Guy', years: '1999–', type: 'TV', poster: 'MV5BNTZlMGQ1YjEtMzVlNC00ZmMxLTk0MzgtZjdkYTU1NmUxNTQ0XkEyXkFqcGc@' },
+    { id: 'tt6524350', title: 'Big Mouth', years: '2017–2025', type: 'TV', poster: 'MV5BMTU0YjUyNDctYmM0OC00OWU5LWJmNTMtODY5Njc4MzVlMWE2XkEyXkFqcGc@' },
   ],
 
   // IMDb → Lists. covers = listenin ilk üç öğesinin resmi.
