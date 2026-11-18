@@ -7,16 +7,17 @@ Düz HTML/CSS/JS, derleme yok. `main` dalına push'lanan her şey 1–2 dakika i
 ## Dosyalar
 | Dosya | İçerik |
 |---|---|
-| `index.html` | Sayfa iskeleti, WFJ kartı, meta / paylaşım etiketleri |
+| `index.html` | Sayfa iskeleti, WFJ kartı, Career zaman çizelgesi, meta / paylaşım etiketleri |
 | `config.js` | IMDb profil linki, favori filmler/diziler, IMDb listeleri, Spotify kullanıcısı, ilk çalan liste |
 | `playlists.js` | Spotify listeleri (sekme → grup → `[id, ad]`) |
 | `main.js` | Film & TV ve Music bölümlerini `config.js` / `playlists.js`'ten çizer |
 | `style.css` | Tüm stiller |
-| `assets/` | WFJ amblemi (favicon), `apple-touch-icon.png`, paylaşım görseli `og.png` (1200×630) |
+| `assets/` | WFJ amblemi (favicon), `apple-touch-icon.png`, paylaşım görseli `og.png` (1200×630), `career/` altında okul ve şirket logoları |
 
 ## Sık güncellemeler
 - **Yeni Spotify listesi:** `playlists.js`'te ilgili gruba `['<playlist id>', 'Ad']` satırı ekle. ID, liste linkindeki `open.spotify.com/playlist/<id>` kısmı.
 - **Favori film/dizi ya da IMDb listesi:** `config.js` → `favorites` / `lists`. Poster ID'si, IMDb resim adresindeki `m.media-amazon.com/images/M/<id>._V1_…` kısmı.
+- **Career:** `index.html` → `#career` içindeki `<li class="step">` blokları. Logo `assets/career/`'a; etiket `stepTag edu` (Education) ya da `stepTag work` (Experience).
 - **WFJ istatistikleri** (7,000+, 500+, 24 hikâye): `index.html` içinde elle yazılı.
 
 ## Yerelde bakmak
