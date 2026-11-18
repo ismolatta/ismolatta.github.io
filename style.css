@@ -72,15 +72,8 @@ a { color: var(--green); }
   box-shadow: 0 0 0 2px var(--gold), 0 0 0 7px var(--bg), 0 0 0 8px rgba(212, 178, 106, 0.5),
     0 0 40px rgba(212, 178, 106, 0.25);
 }
-.kicker {
-  margin: 0;
-  font: 1rem/1 var(--brand);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #a7d8a9;
-}
 .name {
-  margin: 0.4rem 0 0.8rem;
+  margin: 0 0 0.8rem;
   font: 700 clamp(2.6rem, 8vw, 4.4rem)/1 var(--sign);
   text-transform: uppercase;
   letter-spacing: 0.02em;
