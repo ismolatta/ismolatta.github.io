@@ -141,6 +141,19 @@
   });
   lists.previousElementSibling.hidden = lists.hidden = !lists.children.length;
 
+  // Contact: copy the address, with a short "Copied" confirmation
+  const copy = $('copyMail');
+  if (copy && navigator.clipboard) {
+    copy.addEventListener('click', () => {
+      navigator.clipboard.writeText(copy.dataset.mail).then(() => {
+        copy.textContent = 'Copied ✓';
+        setTimeout(() => { copy.textContent = 'Copy'; }, 1800);
+      });
+    });
+  } else if (copy) {
+    copy.hidden = true;
+  }
+
   // Every outside link opens in a new tab (in-page #anchors stay put)
   document.querySelectorAll('a[href^="http"]').forEach((a) => {
     a.target = '_blank';
