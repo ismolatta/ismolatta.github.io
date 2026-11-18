@@ -77,6 +77,7 @@ window.PLAYLISTS = [
   {
     key: 'decades',
     label: 'Best of the Decades',
+    short: 'Decades', // telefonda sekmede bu görünür
     groups: [
       {
         title: '🚀 2020s',

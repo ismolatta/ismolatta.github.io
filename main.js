@@ -54,7 +54,9 @@
     btn.id = 'tab-' + cat.key;
     btn.setAttribute('role', 'tab');
     btn.setAttribute('aria-controls', 'panel-' + cat.key);
-    btn.append(el('span', null, cat.label), el('span', 'plTabCount', String(count)));
+    btn.append(el('span', cat.short ? 'plTabLong' : null, cat.label));
+    if (cat.short) btn.append(el('span', 'plTabShort', cat.short));
+    btn.append(el('span', 'plTabCount', String(count)));
     tabs.appendChild(btn);
     tabBtns.push(btn);
 

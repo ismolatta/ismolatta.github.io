@@ -1,20 +1,26 @@
 # İsmail Okutucu — kişisel sayfa
 
-Düz HTML/CSS/JS, derleme yok. Değişen bilgiler (IMDb linki, Spotify listeleri, filmler) `config.js` içinde.
+Yayında: https://ismolatta.github.io
+
+Düz HTML/CSS/JS, derleme yok. `main` dalına push'lanan her şey 1–2 dakika içinde GitHub Pages'te yayına girer.
+
+## Dosyalar
+| Dosya | İçerik |
+|---|---|
+| `index.html` | Sayfa iskeleti, WFJ kartı, meta / paylaşım etiketleri |
+| `config.js` | IMDb profil linki, favori filmler/diziler, IMDb listeleri, Spotify kullanıcısı, ilk çalan liste |
+| `playlists.js` | Spotify listeleri (sekme → grup → `[id, ad]`) |
+| `main.js` | Film & TV ve Music bölümlerini `config.js` / `playlists.js`'ten çizer |
+| `style.css` | Tüm stiller |
+| `assets/` | WFJ amblemi (favicon), `apple-touch-icon.png`, paylaşım görseli `og.png` (1200×630) |
+
+## Sık güncellemeler
+- **Yeni Spotify listesi:** `playlists.js`'te ilgili gruba `['<playlist id>', 'Ad']` satırı ekle. ID, liste linkindeki `open.spotify.com/playlist/<id>` kısmı.
+- **Favori film/dizi ya da IMDb listesi:** `config.js` → `favorites` / `lists`. Poster ID'si, IMDb resim adresindeki `m.media-amazon.com/images/M/<id>._V1_…` kısmı.
+- **WFJ istatistikleri** (7,000+, 500+, 24 hikâye): `index.html` içinde elle yazılı.
 
 ## Yerelde bakmak
 `index.html`'i tarayıcıda çift tıklayarak aç.
 
-## GitHub Pages'e koymak
-1. GitHub'da `<kullanıcıadın>.github.io` adında **public** bir repo aç (boş, README'siz).
-2. Bu klasörde:
-   ```
-   git add .
-   git commit -m "First version"
-   git remote add origin https://github.com/<kullanıcıadın>/<kullanıcıadın>.github.io.git
-   git push -u origin main
-   ```
-3. Repo → Settings → Pages → Source: "Deploy from a branch", Branch: `main` / `(root)` → Save.
-4. 1–2 dakika sonra `https://<kullanıcıadın>.github.io` açılır.
-
-İstersen sonra kendi alan adını (örn. ismailokutucu.com) Settings → Pages → Custom domain'den bağlayabilirsin.
+## Kendi alan adı
+Settings → Pages → Custom domain'den bağlanabilir. Bağlarsan `index.html`'deki `canonical`, `og:url` ve `og:image` adreslerini yeni alan adına göre güncelle.
