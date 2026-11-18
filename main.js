@@ -140,4 +140,10 @@
     lists.appendChild(a);
   });
   lists.previousElementSibling.hidden = lists.hidden = !lists.children.length;
+
+  // Every outside link opens in a new tab (in-page #anchors stay put)
+  document.querySelectorAll('a[href^="http"]').forEach((a) => {
+    a.target = '_blank';
+    a.rel = 'noopener';
+  });
 })();
