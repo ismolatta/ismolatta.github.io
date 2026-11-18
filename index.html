@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>İsmail Okutucu</title>
+  <meta name="description" content="İsmail Okutucu — maker of World Football Journey. Football history, films and music.">
+  <meta property="og:title" content="İsmail Okutucu">
+  <meta property="og:description" content="Maker of World Football Journey. Football history, films and music.">
+  <meta name="theme-color" content="#070e1a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Iceberg&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <!-- ───── Intro ───── -->
+    <header class="hero">
+      <div class="monogram" aria-hidden="true">İO</div>
+      <p class="kicker">Football · Film · Music</p>
+      <h1 class="name">İsmail Okutucu</h1>
+      <nav class="jump" aria-label="Sections">
+        <a href="#football">Football</a>
+        <a href="#film">Film</a>
+        <a href="#music">Music</a>
+      </nav>
+    </header>
+
+    <!-- ───── Football ───── -->
+    <section id="football" class="card wfj" style="--accent:#d4b26a">
+      <img class="wfjGhost" src="assets/wfj-emblem.svg" alt="" aria-hidden="true">
+
+      <div class="wfjHead">
+        <img class="wfjEmblem" src="assets/wfj-emblem.svg" alt="World Football Journey emblem" width="112" height="112">
+        <div>
+          <p class="label">My project · Football</p>
+          <h2 class="wfjTitle">World Football Journey</h2>
+          <p class="wfjTag">Football history, made playable.</p>
+        </div>
+      </div>
+
+      <p class="text wfjLead">
+        An independent archive of football that I design, build and keep growing. Every trophy,
+        club and career from 1857 to today, turned into profiles, rankings, stories and games.
+        It has no live scores. It covers what has already happened.
+      </p>
+
+      <dl class="stats">
+        <div><dt>Titles &amp; awards</dt><dd>7,000+</dd></div>
+        <div><dt>Clubs with a trophy</dt><dd>500+</dd></div>
+        <div><dt>Years of history</dt><dd>1857<span>→</span>now</dd></div>
+        <div><dt>Long-read stories</dt><dd>24</dd></div>
+      </dl>
+
+      <div class="tiles">
+        <a class="tile" href="https://worldfootballjourney.com/explore/">
+          <span class="tileIcon" aria-hidden="true">🔎</span>
+          <span class="tileName">Explore</span>
+          <span class="tileText">Every club, national team and player, season by season.</span>
+        </a>
+        <a class="tile" href="https://worldfootballjourney.com/year/">
+          <span class="tileIcon" aria-hidden="true">📅</span>
+          <span class="tileName">Year by Year</span>
+          <span class="tileText">Pick a year and see every champion as a pyramid.</span>
+        </a>
+        <a class="tile" href="https://worldfootballjourney.com/analysis/?tab=rankings">
+          <span class="tileIcon" aria-hidden="true">🏆</span>
+          <span class="tileName">Rankings</span>
+          <span class="tileText">The all-time best clubs, nations, players and managers.</span>
+        </a>
+        <a class="tile" href="https://worldfootballjourney.com/analysis/?tab=tournaments">
+          <span class="tileIcon" aria-hidden="true">🌍</span>
+          <span class="tileName">Tournaments</span>
+          <span class="tileText">World Cup, EURO, Champions League and the big leagues.</span>
+        </a>
+        <a class="tile" href="https://worldfootballjourney.com/play/">
+          <span class="tileIcon" aria-hidden="true">🎮</span>
+          <span class="tileName">Games</span>
+          <span class="tileText">Higher or Lower, Guess Who, Chain Reaction, Timeline.</span>
+        </a>
+        <a class="tile" href="https://worldfootballjourney.com/story/">
+          <span class="tileIcon" aria-hidden="true">📖</span>
+          <span class="tileName">Stories</span>
+          <span class="tileText">Famous matches, rivalries and title runs, told in full.</span>
+        </a>
+      </div>
+
+      <div class="actions wfjActions">
+        <a class="btn" href="https://worldfootballjourney.com/">Visit the site ↗</a>
+        <span class="followLabel">Follow @wfootjourney</span>
+        <a class="btn ghost small" href="https://x.com/wfootjourney">X</a>
+        <a class="btn ghost small" href="https://www.instagram.com/wfootjourney/">Instagram</a>
+        <a class="btn ghost small" href="https://www.tiktok.com/@wfootjourney">TikTok</a>
+        <a class="btn ghost small" href="https://www.youtube.com/@wfootjourney">YouTube</a>
+      </div>
+    </section>
+
+    <!-- ───── Film ───── -->
+    <section id="film" class="card" style="--accent:#f5c518">
+      <div class="cardHead">
+        <div>
+          <p class="label">Film &amp; series</p>
+          <h2 class="title">What I'm watching</h2>
+        </div>
+        <span class="medallion badge imdb" aria-hidden="true">IMDb</span>
+      </div>
+      <p class="text">The ten titles I picked as favourites on IMDb, and the lists I keep there.</p>
+      <h3 class="subTitle">Favorite titles</h3>
+      <div class="posters" id="favs"></div>
+      <h3 class="subTitle">Lists</h3>
+      <div class="imdbLists" id="imdbLists"></div>
+      <div class="actions">
+        <a class="btn" id="imdbLink" href="#">My IMDb profile ↗</a>
+      </div>
+    </section>
+
+    <!-- ───── Music ───── -->
+    <section id="music" class="card" style="--accent:#1db954">
+      <div class="cardHead">
+        <div>
+          <p class="label">Music</p>
+          <h2 class="title">Playlists</h2>
+        </div>
+        <span class="medallion badge spotify" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#1db954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+        </span>
+      </div>
+      <p class="text"><span id="plCount"></span> playlists: themed mixes, the best of every decade and a Turkish shelf. Pick one to play it here.</p>
+      <div class="player">
+        <iframe id="player" title="Spotify player" height="152" loading="lazy"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      </div>
+      <div class="plTabs" id="plTabs" role="tablist" aria-label="Playlist categories"></div>
+      <div id="plPanels"></div>
+      <div class="actions">
+        <a class="btn" id="spotifyLink" href="#">Follow on Spotify ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>© <span id="year"></span> İsmail Okutucu</p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="playlists.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
