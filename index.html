@@ -140,11 +140,11 @@
         </div>
         <span class="medallion badge imdb" aria-hidden="true">IMDb</span>
       </div>
-      <p class="text">The ten titles I picked as favourites on IMDb, and the lists I keep there.</p>
-      <h3 class="subTitle">Favorite titles</h3>
-      <div class="posters" id="favs"></div>
-      <h3 class="subTitle">Lists</h3>
-      <div class="imdbLists" id="imdbLists"></div>
+      <p class="text">The titles and people I picked as favourites on IMDb, and the lists I keep there.</p>
+      <div class="plTabs" id="imdbTabs" role="tablist" aria-label="IMDb sections"></div>
+      <div class="posters imdbPanel" id="favs" data-tab="Titles"></div>
+      <div class="people imdbPanel" id="people" data-tab="People"></div>
+      <div class="imdbLists imdbPanel" id="imdbLists" data-tab="Lists"></div>
       <div class="actions">
         <a class="btn" id="imdbLink" href="#">My IMDb profile ↗</a>
       </div>
@@ -253,6 +253,8 @@
   <footer class="foot">
     <p>© <span id="year"></span> İsmail Okutucu</p>
   </footer>
+
+  <button class="toTop" id="toTop" type="button" aria-label="Back to top" title="Back to top" hidden>↑</button>
 
   <script src="config.js"></script>
   <script src="playlists.js"></script>

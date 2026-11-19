@@ -126,7 +126,18 @@
     a.append(frame, el('span', 'posterTitle', f.title), el('span', 'posterMeta', f.years));
     favs.appendChild(a);
   });
-  favs.previousElementSibling.hidden = favs.hidden = !favs.children.length;
+
+  const people = $('people');
+  (cfg.people || []).forEach((p) => {
+    const a = el('a', 'person');
+    a.href = 'https://www.imdb.com/name/' + p.id + '/';
+    const frame = el('span', 'personFrame');
+    frame.appendChild(poster(p.photo, p.name, 200));
+    const name = el('span', 'personName', p.name);
+    if (/[ıİğĞşŞ]/.test(p.name)) name.lang = 'tr';
+    a.append(frame, name);
+    people.appendChild(a);
+  });
 
   const lists = $('imdbLists');
   (cfg.lists || []).forEach((l) => {
@@ -135,11 +146,53 @@
     const stack = el('span', 'coverStack');
     l.covers.slice(0, 3).forEach((c) => stack.appendChild(poster(c, '', 200)));
     const info = el('span', 'listInfo');
-    info.append(el('span', 'listTitle', l.title), el('span', 'listCount', l.count));
+    const title = el('span', 'listTitle', l.title);
+    if (l.lang) title.lang = a.dataset.lang = l.lang; // 'tr': uppercase gives İ, not I; also sorts last on mobile
+    info.append(title);
     a.append(stack, info, el('span', 'listArrow', '↗'));
     lists.appendChild(a);
   });
-  lists.previousElementSibling.hidden = lists.hidden = !lists.children.length;
+
+  // Titles / People / Lists as tabs, same look as the playlist tabs; empty ones are skipped
+  const imdbTabs = $('imdbTabs');
+  const imdbPanels = [favs, people, lists].filter((p) => p.children.length);
+  const imdbBtns = imdbPanels.map((panel) => {
+    const b = el('button', 'plTab');
+    b.type = 'button';
+    b.id = 'tab-' + panel.id;
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-controls', panel.id);
+    b.append(el('span', null, panel.dataset.tab), el('span', 'plTabCount', String(panel.children.length)));
+    panel.setAttribute('role', 'tabpanel');
+    panel.setAttribute('aria-labelledby', b.id);
+    imdbTabs.appendChild(b);
+    return b;
+  });
+  [favs, people, lists].forEach((p) => (p.hidden = true));
+  const showImdb = (i) => {
+    imdbBtns.forEach((b, j) => b.setAttribute('aria-selected', String(i === j)));
+    imdbPanels.forEach((p, j) => (p.hidden = i !== j));
+  };
+  imdbBtns.forEach((b, i) => b.addEventListener('click', () => showImdb(i)));
+  imdbTabs.addEventListener('keydown', (e) => {
+    const i = imdbBtns.indexOf(document.activeElement);
+    if (i < 0 || (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft')) return;
+    const n = (i + (e.key === 'ArrowRight' ? 1 : -1) + imdbBtns.length) % imdbBtns.length;
+    imdbBtns[n].focus();
+    showImdb(n);
+  });
+  imdbTabs.hidden = !imdbBtns.length;
+  if (imdbBtns.length) showImdb(0);
+
+  // Back to top: fixed bottom-right, shows once you scroll; clears #section / ?params from the URL
+  const toTop = $('toTop');
+  const showTop = () => (toTop.hidden = window.scrollY < 400);
+  window.addEventListener('scroll', showTop, { passive: true });
+  showTop();
+  toTop.addEventListener('click', () => {
+    history.replaceState(null, '', location.pathname);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 
   // Every outside link opens in a new tab (in-page #anchors stay put)
   document.querySelectorAll('a[href^="http"]').forEach((a) => {

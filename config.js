@@ -1,5 +1,5 @@
 // Sayfanın değişen bilgileri burada. Spotify listeleri ayrı dosyada: playlists.js
-// IMDb verisi 2026-11-18'de profilden okundu; IMDb'de değişirse burayı güncelle.
+// IMDb verisi 2026-11-20'de profilden okundu; IMDb'de değişirse burayı güncelle.
 // poster / covers: m.media-amazon.com/images/M/<id>._V1_… resminin <id> kısmı.
 window.SITE_CONFIG = {
   imdb: 'https://www.imdb.com/user/p.glvdjq2lhknwihwqka3c6ugyl4/',
@@ -8,7 +8,7 @@ window.SITE_CONFIG = {
   spotifyUser: 'iokutucu92',
 
   // Player ilk açıldığında çalınacak liste (playlists.js'teki id).
-  firstPlaylist: '51oosqaCVPMOhAtEG6ibaF', // ⚽️ Football
+  firstPlaylist: '6Sumz33nIhv0j72U7fGDIz', // 😎 Car
 
   // IMDb → Favorite titles, profildeki sırayla.
   favorites: [
@@ -24,27 +24,51 @@ window.SITE_CONFIG = {
     { id: 'tt6524350', title: 'Big Mouth', years: '2017–2025', type: 'TV', poster: 'MV5BMTU0YjUyNDctYmM0OC00OWU5LWJmNTMtODY5Njc4MzVlMWE2XkEyXkFqcGc@' },
   ],
 
+  // IMDb → Favorite people, ada göre alfabetik.
+  people: [
+    { id: 'nm1676221', name: 'Andy Samberg', photo: 'MV5BNDg3NDk3ODI0Ml5BMl5BanBnXkFtZTgwOTE3MTE4NTM@' },
+    { id: 'nm0122987', name: 'Bill Burr', photo: 'MV5BMTQwNDgwODg3NV5BMl5BanBnXkFtZTcwMTY5OTM3MQ@@' },
+    { id: 'nm3102998', name: 'Bo Burnham', photo: 'MV5BNmJiNzA4ZGEtZDc5YS00MjhiLWEwNzUtMTk0YWM4NmQ3MTMzXkEyXkFqcGc@' },
+    { id: 'nm0186505', name: 'Bryan Cranston', photo: 'MV5BMTA2NjEyMTY4MTVeQTJeQWpwZ15BbWU3MDQ5NDAzNDc@' },
+    { id: 'nm0948000', name: 'Cem Yılmaz', photo: 'MV5BMTU5NzYxMDM3N15BMl5BanBnXkFtZTgwMDEzMTE4MTE@' },
+    { id: 'nm0000288', name: 'Christian Bale', photo: 'MV5BMTkxMzk4MjQ4MF5BMl5BanBnXkFtZTcwMzExODQxOA@@' },
+    { id: 'nm0634240', name: 'Christopher Nolan', photo: 'MV5BNjE3NDQyOTYyMV5BMl5BanBnXkFtZTcwODcyODU2Mw@@' },
+    { id: 'nm0005277', name: "Conan O'Brien", photo: 'MV5BMTMyMTAwMzQ0NF5BMl5BanBnXkFtZTcwNzM5MTU5MQ@@' },
+    { id: 'nm0000197', name: 'Jack Nicholson', photo: 'MV5BMTQ3OTY0ODk0M15BMl5BanBnXkFtZTYwNzE4Njc4' },
+    { id: 'nm0000206', name: 'Keanu Reeves', photo: 'MV5BNDEzOTdhNDUtY2EyMy00YTNmLWE5MjItZmRjMmQzYTRlMGRkXkEyXkFqcGc@' },
+    { id: 'nm0000138', name: 'Leonardo DiCaprio', photo: 'MV5BMjI0MTg3MzI0M15BMl5BanBnXkFtZTcwMzQyODU2Mw@@' },
+    { id: 'nm0000190', name: 'Matthew McConaughey', photo: 'MV5BMTg0MDc3ODUwOV5BMl5BanBnXkFtZTcwMTk2NjY4Nw@@' },
+    { id: 'nm0315041', name: 'Ricky Gervais', photo: 'MV5BMjQzOTEzMTk1M15BMl5BanBnXkFtZTgwODI1Mzc0MDI@' },
+    { id: 'nm0000375', name: 'Robert Downey Jr.', photo: 'MV5BNzg1MTUyNDYxOF5BMl5BanBnXkFtZTgwNTQ4MTE2MjE@' },
+    { id: 'nm1500155', name: 'Robert Pattinson', photo: 'MV5BNzk0MDQ5OTUxMV5BMl5BanBnXkFtZTcwMDM5ODk5Mg@@' },
+    { id: 'nm1258970', name: 'Russell Brand', photo: 'MV5BMTUxMzA2Nzk0N15BMl5BanBnXkFtZTcwMDgwMTEwNQ@@' },
+    { id: 'nm0331516', name: 'Ryan Gosling', photo: 'MV5BMTQzMjkwNTQ2OF5BMl5BanBnXkFtZTgwNTQ4MTQ4MTE@' },
+    { id: 'nm0005351', name: 'Ryan Reynolds', photo: 'MV5BMzRiNDhiMDQtYWZkMS00ZjU5LTg5NzUtOTc4NzE2Yzc0ZWUwXkEyXkFqcGc@' },
+    { id: 'nm0532235', name: 'Seth MacFarlane', photo: 'MV5BMTgyNDk3OTI2NF5BMl5BanBnXkFtZTcwMDA4NjU5OA@@' },
+    { id: 'nm0302108', name: 'Zach Galifianakis', photo: 'MV5BMTQwNzI3NjIwMV5BMl5BanBnXkFtZTcwMzA1OTIwMw@@' },
+  ],
+
   // IMDb → Lists. covers = listenin ilk üç öğesinin resmi.
   lists: [
     {
-      id: 'ls548417842', title: 'Best Movie Of Year', count: '67 titles',
+      id: 'ls548417842', title: 'Best Movie Of Year',
       covers: ['MV5BOWNjYWM3NWItOGE0ZS00MWRjLThiZWEtYjc4ZmNmMmU5ZTVmXkEyXkFqcGc@', 'MV5BYzc1NWUwMDgtNGZlMS00ZmYzLWIzMzktNmMxMmY1MTUzNWExXkEyXkFqcGc@', 'MV5BZTk5ODY0MmQtMzA3Ni00NGY1LThiYzItZThiNjFiNDM4MTM3XkEyXkFqcGc@'],
     },
     {
-      id: 'ls548413366', title: 'Yılın En İyi Filmi', count: '59 titles',
+      id: 'ls548413366', title: 'Yılın En İyi Filmi', lang: 'tr',
       covers: ['MV5BM2I2NmQ1ZTItZGY1Ny00N2I0LThmYmItOTYyNTdmYzQ2NTA2XkEyXkFqcGc@', 'MV5BNTExMzUyZjctZDViNS00NzA3LWJiNTctNzE1ZWJiYmZjNmM4XkEyXkFqcGc@', 'MV5BZmM4NzZiMzctM2M3OS00MWNhLWFiYzQtODRjMTEzYWVmMTc4XkEyXkFqcGc@'],
     },
     {
-      id: 'ls548427357', title: 'Best Music Video Of Year', count: '41 titles',
+      id: 'ls548427357', title: 'Best Music Video Of Year',
       covers: ['MV5BODA5ZjY2NzctOWQ1MS00YjhkLTkwOTItNjcxNjVkNjFkN2MwXkEyXkFqcGc@', 'MV5BNTI2NTE3NjktODhiNi00ZDlhLTliM2UtMDY2NTNmNTliNjhkXkEyXkFqcGc@', 'MV5BYzU3ZTFkZDctYmNlNi00ZjMxLTgwNGItYTI1YjdmOWJiNTQzXkEyXkFqcGc@'],
     },
     {
-      id: 'ls548424940', title: 'Yılın En İyi Müzik Videosu', count: '31 titles',
+      id: 'ls548424940', title: 'Yılın En İyi Müzik Videosu', lang: 'tr',
       covers: ['MV5BNTdhMDRlMTctNzc4MC00OTMxLWI5YWEtM2I4OGVmYjE5ZGVlXkEyXkFqcGc@', 'MV5BYWU0ZWEwZDgtZjBmMC00YjY1LThiZjgtM2U2ZTNhMWViNjdhXkEyXkFqcGc@', 'MV5BYTQxNmEwYjgtZjI5Mi00MDNiLThmNWQtNDkxYTBiZGRiYmQ3XkEyXkFqcGc@'],
     },
     {
-      id: 'ls548429564', title: 'Smartest Movie Characters', count: '3 people',
-      covers: ['MV5BNzg1MTUyNDYxOF5BMl5BanBnXkFtZTgwNTQ4MTE2MjE@', 'MV5BZmRhZDY0OGMtZWYxYi00ZmZhLWE3NjEtZTZkOWYwNGM2ZjY5XkEyXkFqcGc@', 'MV5BMTI2NTY0NzA4MF5BMl5BanBnXkFtZTYwMjE1MDE0'],
+      id: 'ls4114287130', title: 'MCU Movies From Best to Worst',
+      covers: ['MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@', 'MV5BZTk5ODY0MmQtMzA3Ni00NGY1LThiYzItZThiNjFiNDM4MTM3XkEyXkFqcGc@', 'MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@'],
     },
   ],
 };
