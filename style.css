@@ -312,7 +312,7 @@ a { color: var(--green); }
 }
 .step:hover, .step:focus-visible { border-color: var(--accent); transform: translateY(-2px); outline: none; }
 .stepLogo {
-  flex: none; display: grid; place-items: center; width: 52px; height: 52px; padding: 6px;
+  flex: none; display: grid; grid-template: minmax(0, 1fr) / minmax(0, 1fr); place-items: center; width: 52px; height: 52px; padding: 6px;
   border-radius: 12px; background: #fff;
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent);
 }
