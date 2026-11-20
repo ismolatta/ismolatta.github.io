@@ -8,6 +8,20 @@
     if (text != null) n.textContent = text;
     return n;
   };
+  // Inactive tab panel: stays in the layout (keeps the height) but is invisible and unreachable
+  const setOff = (p, off) => {
+    p.classList.toggle('off', off);
+    p.inert = off;
+  };
+  // Left/right arrow keys move between the tabs of a tab row
+  const arrowKeys = (list, btns, select) =>
+    list.addEventListener('keydown', (e) => {
+      const i = btns.indexOf(document.activeElement);
+      if (i < 0 || (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft')) return;
+      const n = (i + (e.key === 'ArrowRight' ? 1 : -1) + btns.length) % btns.length;
+      btns[n].focus();
+      select(n);
+    });
 
   $('year').textContent = new Date().getFullYear();
 
@@ -44,6 +58,7 @@
 
   const tabs = $('plTabs');
   const panels = $('plPanels');
+  panels.classList.add('tabStack');
   const tabBtns = [];
   let firstChip = null;
 
@@ -65,10 +80,28 @@
     panel.setAttribute('role', 'tabpanel');
     panel.setAttribute('aria-labelledby', btn.id);
 
-    cat.groups.forEach((g) => {
-      const row = el('div', 'plGroup');
-      row.appendChild(el('h3', 'plGroupTitle', g.title));
+    // Groups (decades, moods…) are a second row of tabs; only one group's chips show at a time
+    const subTabs = el('div', 'plSubTabs');
+    subTabs.setAttribute('role', 'tablist');
+    subTabs.setAttribute('aria-label', cat.label + ' groups');
+    const groups = el('div', 'tabStack');
+    const subBtns = [];
+    let startGroup = 0;
+
+    cat.groups.forEach((g, gi) => {
+      const sb = el('button', 'plSubTab');
+      sb.type = 'button';
+      sb.id = 'tab-' + cat.key + '-' + gi;
+      sb.setAttribute('role', 'tab');
+      sb.setAttribute('aria-controls', 'panel-' + cat.key + '-' + gi);
+      sb.append(el('span', null, g.title), el('span', 'plTabCount', String(g.items.length)));
+      subTabs.appendChild(sb);
+      subBtns.push(sb);
+
       const chips = el('div', 'plChips');
+      chips.id = 'panel-' + cat.key + '-' + gi;
+      chips.setAttribute('role', 'tabpanel');
+      chips.setAttribute('aria-labelledby', sb.id);
       g.items.forEach(([id, name]) => {
         const chip = el('button', 'plChip', name);
         chip.type = 'button';
@@ -76,11 +109,23 @@
         chip.title = (cat.key === 'mixes' ? name : g.title + ' · ' + name) + ' — play';
         chip.addEventListener('click', () => play(id, chip, true));
         chips.appendChild(chip);
-        if (id === cfg.firstPlaylist) firstChip = chip;
+        if (id === cfg.firstPlaylist) {
+          firstChip = chip;
+          startGroup = gi;
+        }
       });
-      row.appendChild(chips);
-      panel.appendChild(row);
+      groups.appendChild(chips);
     });
+
+    const selectGroup = (i) => {
+      subBtns.forEach((b, j) => b.setAttribute('aria-selected', String(i === j)));
+      [...groups.children].forEach((p, j) => setOff(p, i !== j));
+    };
+    subBtns.forEach((b, i) => b.addEventListener('click', () => selectGroup(i)));
+    arrowKeys(subTabs, subBtns, selectGroup);
+    selectGroup(startGroup);
+
+    panel.append(subTabs, groups);
     panels.appendChild(panel);
 
     btn.addEventListener('click', () => select(ci));
@@ -88,16 +133,9 @@
 
   function select(i) {
     tabBtns.forEach((b, j) => b.setAttribute('aria-selected', String(i === j)));
-    [...panels.children].forEach((p, j) => (p.hidden = i !== j));
+    [...panels.children].forEach((p, j) => setOff(p, i !== j));
   }
-  // Arrow keys move between tabs.
-  tabs.addEventListener('keydown', (e) => {
-    const i = tabBtns.indexOf(document.activeElement);
-    if (i < 0 || (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft')) return;
-    const n = (i + (e.key === 'ArrowRight' ? 1 : -1) + tabBtns.length) % tabBtns.length;
-    tabBtns[n].focus();
-    select(n);
-  });
+  arrowKeys(tabs, tabBtns, select);
 
   if (cats.length) {
     select(0);
@@ -120,6 +158,7 @@
   (cfg.favorites || []).forEach((f) => {
     const a = el('a', 'poster');
     a.href = 'https://www.imdb.com/title/' + f.id + '/';
+    a.dataset.type = f.type; // phones: films on the top row, TV on the bottom
     const frame = el('span', 'posterFrame');
     frame.appendChild(poster(f.poster, f.title + ' poster', 300));
     frame.appendChild(el('span', 'posterType', f.type));
@@ -156,6 +195,10 @@
   // Titles / People / Lists as tabs, same look as the playlist tabs; empty ones are skipped
   const imdbTabs = $('imdbTabs');
   const imdbPanels = [favs, people, lists].filter((p) => p.children.length);
+  // Stack the panels in one box so switching tabs doesn't change the section's height
+  const imdbStack = el('div', 'tabStack');
+  favs.before(imdbStack);
+  imdbStack.append(favs, people, lists);
   const imdbBtns = imdbPanels.map((panel) => {
     const b = el('button', 'plTab');
     b.type = 'button';
@@ -168,19 +211,13 @@
     imdbTabs.appendChild(b);
     return b;
   });
-  [favs, people, lists].forEach((p) => (p.hidden = true));
+  [favs, people, lists].forEach((p) => (p.hidden = !imdbPanels.includes(p)));
   const showImdb = (i) => {
     imdbBtns.forEach((b, j) => b.setAttribute('aria-selected', String(i === j)));
-    imdbPanels.forEach((p, j) => (p.hidden = i !== j));
+    imdbPanels.forEach((p, j) => setOff(p, i !== j));
   };
   imdbBtns.forEach((b, i) => b.addEventListener('click', () => showImdb(i)));
-  imdbTabs.addEventListener('keydown', (e) => {
-    const i = imdbBtns.indexOf(document.activeElement);
-    if (i < 0 || (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft')) return;
-    const n = (i + (e.key === 'ArrowRight' ? 1 : -1) + imdbBtns.length) % imdbBtns.length;
-    imdbBtns[n].focus();
-    showImdb(n);
-  });
+  arrowKeys(imdbTabs, imdbBtns, showImdb);
   imdbTabs.hidden = !imdbBtns.length;
   if (imdbBtns.length) showImdb(0);
 

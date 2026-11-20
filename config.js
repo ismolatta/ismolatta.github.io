@@ -51,7 +51,7 @@ window.SITE_CONFIG = {
   // IMDb → Lists. covers = listenin ilk üç öğesinin resmi.
   lists: [
     {
-      id: 'ls548417842', title: 'Best Movie Of Year',
+      id: 'ls548417842', title: 'Best Movie of the Year',
       covers: ['MV5BOWNjYWM3NWItOGE0ZS00MWRjLThiZWEtYjc4ZmNmMmU5ZTVmXkEyXkFqcGc@', 'MV5BYzc1NWUwMDgtNGZlMS00ZmYzLWIzMzktNmMxMmY1MTUzNWExXkEyXkFqcGc@', 'MV5BZTk5ODY0MmQtMzA3Ni00NGY1LThiYzItZThiNjFiNDM4MTM3XkEyXkFqcGc@'],
     },
     {
@@ -59,12 +59,16 @@ window.SITE_CONFIG = {
       covers: ['MV5BM2I2NmQ1ZTItZGY1Ny00N2I0LThmYmItOTYyNTdmYzQ2NTA2XkEyXkFqcGc@', 'MV5BNTExMzUyZjctZDViNS00NzA3LWJiNTctNzE1ZWJiYmZjNmM4XkEyXkFqcGc@', 'MV5BZmM4NzZiMzctM2M3OS00MWNhLWFiYzQtODRjMTEzYWVmMTc4XkEyXkFqcGc@'],
     },
     {
-      id: 'ls548427357', title: 'Best Music Video Of Year',
+      id: 'ls548427357', title: 'Best Music Video of the Year',
       covers: ['MV5BODA5ZjY2NzctOWQ1MS00YjhkLTkwOTItNjcxNjVkNjFkN2MwXkEyXkFqcGc@', 'MV5BNTI2NTE3NjktODhiNi00ZDlhLTliM2UtMDY2NTNmNTliNjhkXkEyXkFqcGc@', 'MV5BYzU3ZTFkZDctYmNlNi00ZjMxLTgwNGItYTI1YjdmOWJiNTQzXkEyXkFqcGc@'],
     },
     {
       id: 'ls548424940', title: 'Yılın En İyi Müzik Videosu', lang: 'tr',
       covers: ['MV5BNTdhMDRlMTctNzc4MC00OTMxLWI5YWEtM2I4OGVmYjE5ZGVlXkEyXkFqcGc@', 'MV5BYWU0ZWEwZDgtZjBmMC00YjY1LThiZjgtM2U2ZTNhMWViNjdhXkEyXkFqcGc@', 'MV5BYTQxNmEwYjgtZjI5Mi00MDNiLThmNWQtNDkxYTBiZGRiYmQ3XkEyXkFqcGc@'],
+    },
+    {
+      id: 'ls4114976423', title: 'Batman Movies From Best to Worst',
+      covers: ['MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@', 'MV5BMzA2NDQzZDEtNDU5Ni00YTlkLTg2OWEtYmQwM2Y1YTBjMjFjXkEyXkFqcGc@', 'MV5BMTk4ODQzNDY3Ml5BMl5BanBnXkFtZTcwODA0NTM4Nw@@'],
     },
     {
       id: 'ls4114287130', title: 'MCU Movies From Best to Worst',
