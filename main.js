@@ -40,6 +40,11 @@
   if (cfg.linkedin) linkedin.href = cfg.linkedin;
   else linkedin.hidden = true;
 
+  // Pinterest
+  const pinterest = $('pinterestLink');
+  if (cfg.pinterest) pinterest.href = cfg.pinterest;
+  else pinterest.hidden = true;
+
   // ── Playlists: one shared player + every list as a chip ──
   const player = $('player');
   const embed = (id) => 'https://open.spotify.com/embed/playlist/' + id + '?theme=0';

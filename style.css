@@ -318,6 +318,10 @@ a { color: var(--green); }
 }
 .plTab:focus-visible, .plSubTab:focus-visible, .plChip:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 
+/* ── Design ── */
+.pinterest { background: #fff; overflow: hidden; }
+.pinterest svg { display: block; width: 100%; height: 100%; }
+
 /* ── Career ── */
 .linkedin { background: #0a66c2; }
 .linkedin svg { width: 50%; height: 50%; }

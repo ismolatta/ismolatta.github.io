@@ -7,6 +7,9 @@ window.SITE_CONFIG = {
   // LinkedIn profil linki (boşsa Career'daki buton gizlenir).
   linkedin: 'https://www.linkedin.com/in/ismailokutucu/',
 
+  // Pinterest profil linki (boşsa Design'daki buton gizlenir).
+  pinterest: 'https://tr.pinterest.com/macrotus/_profile/',
+
   // Spotify kullanıcı kimliği (profil linkindeki /user/… kısmı).
   spotifyUser: 'iokutucu92',
 

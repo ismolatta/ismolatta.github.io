@@ -8,7 +8,7 @@ Düz HTML/CSS/JS, derleme yok. `main` dalına push'lanan her şey 1–2 dakika i
 | Dosya | İçerik |
 |---|---|
 | `index.html` | Sayfa iskeleti, WFJ kartı, Career zaman çizelgesi, Contact, meta / paylaşım etiketleri |
-| `config.js` | IMDb ve LinkedIn profil linkleri, favori filmler/diziler, IMDb listeleri, Spotify kullanıcısı, ilk çalan liste |
+| `config.js` | IMDb, LinkedIn ve Pinterest profil linkleri, favori filmler/diziler, IMDb listeleri, Spotify kullanıcısı, ilk çalan liste |
 | `playlists.js` | Spotify listeleri (sekme → grup → `[id, ad]`) |
 | `main.js` | Film & TV ve Music bölümlerini `config.js` / `playlists.js`'ten çizer |
 | `style.css` | Tüm stiller |
