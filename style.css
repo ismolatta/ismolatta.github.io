@@ -83,12 +83,25 @@ a { color: var(--green); }
 .jump a {
   font: 600 1.05rem/1 var(--sign);
   text-transform: uppercase; letter-spacing: 0.06em;
-  text-decoration: none; color: var(--ink);
+  text-decoration: none;
+  color: color-mix(in srgb, var(--accent, var(--gold)) 35%, var(--ink));
   padding: 0.55rem 1rem;
-  border: 1px solid var(--line); border-radius: 999px;
-  background: var(--glass);
+  border: 1px solid color-mix(in srgb, var(--accent, var(--gold)) 30%, transparent);
+  border-radius: 999px;
+  background:
+    radial-gradient(120% 140% at 50% 0%, color-mix(in srgb, var(--accent, var(--gold)) 14%, transparent), transparent 70%),
+    var(--glass);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--accent, var(--gold)) 18%, transparent);
+  transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
 }
-.jump a:hover { border-color: var(--gold); color: var(--gold); }
+.jump a:hover {
+  color: var(--accent, var(--gold));
+  border-color: color-mix(in srgb, var(--accent, var(--gold)) 65%, transparent);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--accent, var(--gold)) 30%, transparent),
+    0 0 18px color-mix(in srgb, var(--accent, var(--gold)) 28%, transparent);
+  transform: translateY(-1px);
+}
 
 /* ── Cards (dark glass, top neon hairline in the section's accent) ── */
 .card {
