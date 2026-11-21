@@ -35,6 +35,11 @@
   if (cfg.spotifyUser) spotify.href = 'https://open.spotify.com/user/' + encodeURIComponent(cfg.spotifyUser);
   else spotify.hidden = true;
 
+  // LinkedIn
+  const linkedin = $('linkedinLink');
+  if (cfg.linkedin) linkedin.href = cfg.linkedin;
+  else linkedin.hidden = true;
+
   // ── Playlists: one shared player + every list as a chip ──
   const player = $('player');
   const embed = (id) => 'https://open.spotify.com/embed/playlist/' + id + '?theme=0';

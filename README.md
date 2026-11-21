@@ -8,7 +8,7 @@ Düz HTML/CSS/JS, derleme yok. `main` dalına push'lanan her şey 1–2 dakika i
 | Dosya | İçerik |
 |---|---|
 | `index.html` | Sayfa iskeleti, WFJ kartı, Career zaman çizelgesi, Contact, meta / paylaşım etiketleri |
-| `config.js` | IMDb profil linki, favori filmler/diziler, IMDb listeleri, Spotify kullanıcısı, ilk çalan liste |
+| `config.js` | IMDb ve LinkedIn profil linkleri, favori filmler/diziler, IMDb listeleri, Spotify kullanıcısı, ilk çalan liste |
 | `playlists.js` | Spotify listeleri (sekme → grup → `[id, ad]`) |
 | `main.js` | Film & TV ve Music bölümlerini `config.js` / `playlists.js`'ten çizer |
 | `style.css` | Tüm stiller |
@@ -22,7 +22,7 @@ Düz HTML/CSS/JS, derleme yok. `main` dalına push'lanan her şey 1–2 dakika i
 - **WFJ istatistikleri** (7,000+, 500+, 24 hikâye): `index.html` içinde elle yazılı.
 
 ## Yerelde bakmak
-`index.html`'i tarayıcıda çift tıklayarak aç.
+`./serve.ps1` çalıştır, sonra http://localhost:5050 adresini aç. Port sabit: **5050**.
 
 ## Kendi alan adı
 Settings → Pages → Custom domain'den bağlanabilir. Bağlarsan `index.html`'deki `canonical`, `og:url` ve `og:image` adreslerini yeni alan adına göre güncelle.

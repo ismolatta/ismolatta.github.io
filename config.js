@@ -4,6 +4,9 @@
 window.SITE_CONFIG = {
   imdb: 'https://www.imdb.com/user/p.glvdjq2lhknwihwqka3c6ugyl4/',
 
+  // LinkedIn profil linki (boşsa Career'daki buton gizlenir).
+  linkedin: 'https://www.linkedin.com/in/ismailokutucu/',
+
   // Spotify kullanıcı kimliği (profil linkindeki /user/… kısmı).
   spotifyUser: 'iokutucu92',
 
