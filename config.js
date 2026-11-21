@@ -10,6 +10,12 @@ window.SITE_CONFIG = {
   // Pinterest profil linki (boşsa Design'daki buton gizlenir).
   pinterest: 'https://tr.pinterest.com/macrotus/_profile/',
 
+  // Pinterest panoları (2026-11-21'de profilden okundu). slug = pinterest.com/macrotus/<slug>/
+  // covers = panonun ilk pinlerinin resmi: i.pinimg.com/<boyut>/<buradaki kısım>
+  boards: [
+    { slug: 'best-barcelona-jerseys', title: 'Best Barcelona Jerseys', pins: 5, covers: ['93/18/c9/9318c913f22de3ac6af50506ad99b001.jpg', '62/92/eb/6292eb9b277d309765ae5b5f48078779.jpg', 'fa/08/01/fa080181889dd0fc80efcee9fe44d64b.jpg'] },
+  ],
+
   // Spotify kullanıcı kimliği (profil linkindeki /user/… kısmı).
   spotifyUser: 'iokutucu92',
 

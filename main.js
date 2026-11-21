@@ -231,6 +231,29 @@
   imdbTabs.hidden = !imdbBtns.length;
   if (imdbBtns.length) showImdb(0);
 
+  // ── Pinterest boards: same cards as the IMDb lists ──
+  const boards = $('boards');
+  (cfg.boards || []).forEach((b) => {
+    const a = el('a', 'imdbList');
+    a.href = 'https://www.pinterest.com/macrotus/' + b.slug + '/';
+    const stack = el('span', 'coverStack boardStack');
+    b.covers.slice(0, 3).forEach((c) => {
+      const i = el('img');
+      i.src = 'https://i.pinimg.com/236x/' + c;
+      i.alt = '';
+      i.loading = 'lazy';
+      i.decoding = 'async';
+      stack.appendChild(i);
+    });
+    const info = el('span', 'listInfo');
+    const title = el('span', 'listTitle', b.title);
+    if (/[ıİğĞşŞ]/.test(b.title)) title.lang = 'tr';
+    info.append(title, el('span', 'listMeta', b.pins + (b.pins === 1 ? ' pin' : ' pins')));
+    a.append(stack, info, el('span', 'listArrow', '↗'));
+    boards.appendChild(a);
+  });
+  boards.hidden = !boards.children.length;
+
   // Back to top: fixed bottom-right, shows once you scroll; clears #section / ?params from the URL
   const toTop = $('toTop');
   const showTop = () => (toTop.hidden = window.scrollY < 400);
